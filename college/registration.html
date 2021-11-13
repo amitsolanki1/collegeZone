@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+    <link rel="stylesheet" href="bootstrap.css" type="text/css">
+</head>
+<style>
+    .navbar {
+        padding-top: -9rem;
+        height: 3rem;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar ul li a {
+        display: flex;
+        /* justify-contesnt: space-between; */
+        float: right;
+    }
+
+    .navbar a:hover {
+        border-bottom: 1px solid white;
+
+    }
+
+    .container {
+        position: relative;
+        top: 1rem;
+        padding: 100px;
+        /* background: rgba(0,0,0,.5); */
+        border: .2px solid black;
+    }
+
+    .container .box {
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    .contianer .box h2 {
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .container .clas {
+        position: absolute;
+        right: 10rem;
+        top: 1rem;
+        background: white;
+        text-align: center;
+        background: #000;
+        border-radius: 20px;
+        color: #fff;
+        width: 100px;
+        height: 50px;
+        cursor: pointer;
+
+    }
+
+    .active.reg {
+        background: red;
+        width: 100px;
+        height: 27px;
+        border-radius: 20px;
+        color: black;
+
+    }
+
+    .active.login {
+        background: red;
+        width: 100px;
+        border-radius: 20px;
+        height: 27px;
+        color: black;
+
+    }
+    form{
+        position: relative;
+        top: 2rem;
+    }
+form label{
+    width:150px
+}
+    input {
+        padding: 0px 0 0 10px;
+        border: none;
+        border-bottom: 2px solid black;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .btn{
+        width: 100px;
+    }
+</style>
+
+<body>
+    
+    <div id="navbar" class="navbar navbar-expand navbar-dark ">
+        <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link nav-tabs">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="#contact" tabindex="-1" aria-disabled="true">Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#footer" class="nav-link">About</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+ 
+ 
+   
+    <div class="container">
+        <div class="clas" id="switch">
+            <div class="reg">SIGN UP</div>
+            <div class="login">SIGN IN</div>
+        </div>
+        <div class="box">
+            <h2>Sign Up</h2>
+
+            <div class="centerbox">
+                <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ; ?>" method="POST"
+                    enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Enter Name <span class="text-danger d-lg">*</span> </label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="form-group">
+
+                        <label>Enter Email ID<span class="text-danger d-lg">*</span></label>
+                        <input type="mail" name="mail">
+                    </div>
+                    <div class="form-group">
+                        <label>Enter mobile no. <span class="text-danger d-lg">*</span></label>
+                        <input type="tel" name="mobile">
+                    </div>
+                    <div>
+
+                        <button type="button" class="btn btn1 btn-secondary" >Sign Up</button>
+                    </div>
+                    <div>
+                    </div>
+
+            </div>
+        </div>
+</body>
+<script>
+    const login = document.querySelector('.login');
+    var reg = document.querySelector('.reg');
+
+    reg.addEventListener('click', function () {
+        this.classList.toggle('active');
+        login.classList.remove('active');
+
+    })
+
+    login.addEventListener('click', function () {
+        this.classList.toggle('active');
+        reg.classList.remove('active');
+    })
+</script>
+
+</html>
